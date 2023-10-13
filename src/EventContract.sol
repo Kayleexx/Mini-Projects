@@ -1,7 +1,6 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 
-
 contract Eventcontract {
     struct Event {
         address organizer;
@@ -39,6 +38,6 @@ contract Eventcontract {
         require(events[id].date>block.timestamp, "Event has already occured");
     require(tickets[msg.sender][id] >= quantity, "You do not have enough tickets");
     tickets[msg.sender][id] -=quantity;
-    tickets[to][id] += quantity;       
+    tickets[to][id] += quantity;      
     }
 }
